@@ -1,9 +1,7 @@
 *** Settings ***
 Documentation        Home Page Actions
 
-Resource    ../base_resource.robot
-
-
+Resource    ../base.resource
 
 *** Keywords ***
 #Home Page deve estar visivel

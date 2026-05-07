@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../resources/base_resource.resource
+Resource    ../resources/base.resource
 
 Test Setup        Start Session
 Test Teardown     Close Session
