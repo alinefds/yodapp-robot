@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../resources/base.resource
+Resource    ../resources/base_resource.robot
 
 *** Test Cases ***
 Deve selecionar a opção Javascript    

@@ -1,34 +1,35 @@
 *** Settings ***
 
-Resource    ../resources/base_resource.robot
+Resource    ../resources/base_resource.resource
+
+Test Setup        Start Session
+Test Teardown     Close Session
 
 *** Test Cases ***
 Cenário: Deve logar com sucesso
 
-    Start session
-    Get started
-    Navigate to              Formulários
-    Go to item               Login        Olá Padawan, vamos testar o login?
+    [Tags]    sucesso
 
-    Input Text        id=com.qaxperience.yodapp:id/etEmail       yoda@qax.com
-    Input Text        id=com.qaxperience.yodapp:id/etPassword    jedi
-    Click Element     id=com.qaxperience.yodapp:id/btnSubmit
-
-    Wait Until Page Contains    Boas vindas, logado você está.
-
-     Close session
+    Clique no botão QAX
+    Clique no menu de navegação
+    Clique na opção Formulários
+    Clique no item Login
+    Deve aparecer o texto Olá Padawan, vamos testar o login?
+    Preencher o campo Email com yoda@qax.com
+    Preencher o campo Password com jedi
+    Clique no botão ENTRAR
+    Deve aparecer o texto Boas vindas, logado você está.
 
 Não deve logar com senha incorreta
 
-    Start session
-    Get started
-    Navigate to              Formulários
-    Go to item               Login        Olá Padawan, vamos testar o login?
+    [Tags]    senha_incorreta
 
-    Input Text        id=com.qaxperience.yodapp:id/etEmail       yoda@qax.com
-    Input Text        id=com.qaxperience.yodapp:id/etPassword    sith
-    Click Element     id=com.qaxperience.yodapp:id/btnSubmit
-
-    Wait Until Page Contains    Oops! Credenciais incorretas.
-
-     Close session
+    Clique no botão QAX
+    Clique no menu de navegação
+    Clique na opção Formulários
+    Clique no item Login
+    Deve aparecer o texto Olá Padawan, vamos testar o login?
+    Preencher o campo Email com yoda@qax.com
+    Preencher o campo Password com sith
+    Clique no botão ENTRAR
+    Deve aparecer o texto Oops! Credenciais incorretas.

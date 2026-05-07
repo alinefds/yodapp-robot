@@ -3,6 +3,9 @@
 Resource    ../resources/base_resource.robot
 
 *** Test Cases ***
+
+
+
 Deve realizar um clique simples
 
     Start Session

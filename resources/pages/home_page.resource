@@ -3,8 +3,11 @@ Documentation        Home Page Actions
 
 Resource    ../base_resource.robot
 
+
+
 *** Keywords ***
-Home Page Should Be Visible
-    Wait Until Page Contains    Yodapp
-    Wait Until Page Contains    Mobile Training
-    Wait Until Page Contains    by Papito
+#Home Page deve estar visivel
+Deve aparecer o texto inicial '${text_01}','${text_02}','${text_03}'
+    Wait Until Page Contains    ${text_01}
+    Wait Until Page Contains    ${text_02}
+    Wait Until Page Contains    ${text_03}
