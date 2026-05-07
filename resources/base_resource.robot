@@ -2,6 +2,8 @@
 
 Library    AppiumLibrary
 
+Resource    pages/home_page.resource
+
 *** Variables ***
 
 # Variavel Global dessa Suite de Teste em Letra MAIUSCULA
@@ -9,20 +11,21 @@ ${START}    QAX
 
 *** Keywords ***
 
-Start session	
+Start Session
+	
     Open Application	http://localhost:4723        # Porta padrão do Appium    
     ...	                platformName=Android	
     ...	                deviceName=Android Emulator
     ...	                automationName=UIAutomator2
-    ...	                app=${EXECDIR}/app/yodapp-beta.apk
+    ...	                app=${EXECDIR}/apps/android/yodapp-beta.apk
     ...	                udid=emulator-5554
     ...	                autoGrantPermissions=true
     
-Get started
+Get Started
     Wait Until Page Contains    ${START}        # Checkpoint, garantir que o elemento esteja lá antes de clicar    
     Click Text                  ${START}
 
-Navigate to
+Navigate To
 
     [Arguments]    ${item_text}
 
@@ -36,7 +39,7 @@ Navigate to
     Wait Until Element Is Visible    ${menu_item} 
     Click Element    ${menu_item} 
 
- Go to item
+Go To Item
 
     [Arguments]    ${item}    ${checkpoint}
 
@@ -46,5 +49,6 @@ Navigate to
     Wait Until Page Contains    ${checkpoint}
 
 
- Close session
-    Close Application
+Close Session
+    Run Keyword And Ignore Error    Capture Page Screenshot
+    Run Keyword And Ignore Error    Close Application

@@ -1,9 +1,9 @@
 *** Settings ***
 
-Resource    ../resources/base.resource
+Resource    ../resources/base_resource.robot
 
 *** Test Cases ***
-Deve logar com sucesso
+Cenário: Deve logar com sucesso
 
     Start session
     Get started
