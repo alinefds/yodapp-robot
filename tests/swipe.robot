@@ -1,7 +1,5 @@
 *** Settings ***
 
-Library    AppiumLibrary
-
 Resource    ../resources/base.resource
 
 *** Test Cases ***
