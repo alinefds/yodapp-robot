@@ -6,7 +6,7 @@ Test Setup        Start Session
 Test Teardown     Close Session
 
 *** Test Cases ***
-Cenário: Deve logar com sucesso
+Deve logar com sucesso
 
     [Tags]    sucesso
 

@@ -5,6 +5,9 @@ Library    AppiumLibrary
 Resource    pages/home_page.resource
 Resource    pages/login_page.resource
 Resource    pages/menu_page.resource
+Resource    pages/checkbox_page.resource
+Resource    pages/click_page.resource
+Resource    pages/lista_page.resource
 
 Resource    keywords/common.resource
 

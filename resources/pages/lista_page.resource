@@ -1,16 +1,9 @@
 *** Settings ***
 
-Resource    ../resources/base.resource
+Resource    ../base.resource
 
-*** Test Cases ***
-
-Deve poder remover o Darth Vader
-
-    Start session
-    Get started
-    Navigate to                      Star Wars
-    Go to item                       Lista        Darth Vader
-
+*** Keywords ***
+Deve remover o Darth Vader
     ${positions}    Get Element Location    xpath=//android.widget.TextView[@text='@darthvader']/../../..//*[contains(@resource-id,'indicator')]
 
     ${start_x}    Set Variable        ${positions}[x]  
@@ -23,6 +16,6 @@ Deve poder remover o Darth Vader
     
     Click Element    id=com.qaxperience.yodapp:id/btnRemove
 
+Não deve apresentar mais na lista
     Wait Until Page Does Not Contain    Darth Vader
 
-    Close session
