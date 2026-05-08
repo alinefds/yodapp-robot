@@ -23,6 +23,7 @@ Start Session
     ...    automationName=${AUTOMATION_NAME}
     ...    udid=${UDID}
     ...    app=${APP}
+    ...    autoGrantPermissions=${AUTO_GRANT_PERMISSIONS}
 
 
 Close Session
